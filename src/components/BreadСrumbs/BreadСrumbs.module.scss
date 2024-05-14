@@ -1,0 +1,23 @@
+nav {
+  color: #9aa8ba;
+  cursor: default;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid transparent;
+    transition: 0.15s;
+    &:hover {
+      border-bottom: 1px solid #c4d2e3;
+      color: #c4d2e3;
+    }
+  }
+
+  .lastItem {
+    color: #c4d2e3;
+    cursor: default;
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}

@@ -1,9 +1,13 @@
 import React from "react";
+import Header from "./components/Header/Header";
+import BreadCrumbs from "./components/BreadСrumbs/BreadСrumbs";
+import styles from "./App.module.scss";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Hello, world!</header>
+    <div className={styles.app}>
+      <Header />
+      <BreadCrumbs />
     </div>
   );
 }
