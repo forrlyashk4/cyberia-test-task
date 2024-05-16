@@ -1,0 +1,64 @@
+.portfolio__title {
+  color: #eef3ff;
+  font-size: 48px;
+  font-weight: 600;
+  margin: 130px 0 65px;
+}
+
+.portfolio__categoriesList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.portfolio__category {
+  box-shadow: 8px 15px 29px rgba(23, 27, 44, 0.41);
+  box-sizing: border-box;
+  align-content: center;
+  padding: 10px 29px;
+  height: 49px;
+  border-radius: 7px;
+  font-size: 24px;
+  color: #eef3ff;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-bottom: 52px;
+  &:hover {
+    transform: translateY(-5px);
+    background: #292936;
+  }
+}
+
+.caseList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.case {
+  margin-bottom: 21px;
+  width: 378px;
+  height: 378px;
+  box-sizing: border-box;
+  background: url("../../assets/img/case-1.png") center center/cover no-repeat;
+  display: flex;
+  justify-content: end;
+  align-items: flex-start;
+  padding: 19px 21px;
+  border-radius: 12px;
+  div {
+    background: url("../../assets/icons/case-label.svg") center center/cover
+      no-repeat;
+    width: 128px;
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 35px 25px;
+    span {
+      font-size: 24px;
+      font-weight: 600;
+      color: #fff;
+    }
+  }
+}

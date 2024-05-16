@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../assets/icons/cyberiaLogo.svg";
+import logo from "../../assets/icons/cyberia-logo.svg";
 import style from "./Header.module.scss";
 
 const headerLinksArr = [

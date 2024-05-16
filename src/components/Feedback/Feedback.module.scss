@@ -1,0 +1,148 @@
+form {
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    margin-top: 100px;
+
+    legend {
+      color: #eef3ff;
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 90px;
+    }
+
+    div {
+      display: inline-block;
+      width: 387px;
+      margin-left: 38px;
+      &:nth-child(2) {
+        margin-left: 0;
+      }
+
+      &:nth-child(5) {
+        margin-left: 0;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        background: none;
+        border: 1px solid #eff3ff;
+        border-radius: 8px;
+        height: 61px;
+        font-size: 24px;
+        padding: 0 12px;
+        color: #eff3ff;
+        &:focus-visible {
+          outline: none;
+          border: 1px solid #cdcfd5;
+        }
+      }
+
+      label {
+        position: relative;
+        span {
+          position: absolute;
+          top: calc(-125% - 9px);
+          left: 30px;
+          padding: 0 5px;
+          background: #24252f;
+          font-size: 18px;
+          color: #eff3ff;
+        }
+      }
+    }
+  }
+
+  button {
+    background: #2d76f9;
+    color: #fff;
+    font-size: 18px;
+    line-height: 24px;
+    padding: 20px 45px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 85px;
+    border: none;
+    margin-bottom: 96px;
+    transition: 0.15s;
+    cursor: pointer;
+    &:hover {
+      background: #2062db;
+    }
+  }
+}
+
+.large_input {
+  display: block;
+  margin: 37px 0;
+  box-sizing: border-box;
+  background: none;
+  border: 1px solid #eff3ff;
+  border-radius: 8px;
+  height: 139px;
+  font-size: 24px;
+  color: #eff3ff;
+  position: relative;
+  max-width: 100%;
+  span {
+    position: absolute;
+    top: -9px;
+    left: 30px;
+    padding: 0 5px;
+    background: #242530;
+    font-size: 18px;
+    color: #eff3ff;
+  }
+  textarea {
+    box-sizing: border-box;
+    color: #eff3ff;
+    font-size: 18px;
+    padding: 15px 12px 7px;
+    width: 100% !important;
+    height: 100% !important;
+    background: none;
+    border: none;
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+.checkbox {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: none;
+  border: 1px solid #eff3ff;
+  margin-left: -37px;
+  border-radius: 2px;
+
+  &_input {
+    position: absolute;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  &_label {
+    padding-left: 37px;
+    display: flex;
+    align-items: center;
+    color: #eff3ff;
+    margin-bottom: 50px;
+    font-size: 18px;
+    font-weight: light;
+  }
+}
+
+.checkbox_input:checked + .checkbox {
+  background: url("../../assets/icons/checkbox.svg") center center/cover
+    no-repeat;
+  background-size: 60%;
+}
+
+.checkbox_input:focus + .checkbox {
+  border: 1px solid #cdcfd5;
+}
