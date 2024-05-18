@@ -4,6 +4,15 @@ footer {
   max-height: 396px;
   color: #fff;
   background: #313341;
+
+  img {
+    width: 196px;
+  }
+
+  p {
+    margin: 0;
+    margin-top: 29px;
+  }
 }
 
 .footer_container {
@@ -11,6 +20,7 @@ footer {
 }
 
 .footer_links {
+  max-width: 488px;
   margin-left: 157px;
   display: flex;
   flex-direction: column;

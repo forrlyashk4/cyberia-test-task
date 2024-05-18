@@ -8,7 +8,10 @@ export default function Footer() {
       <div className={`container ${styles.footer_container}`}>
         <div>
           <img src={logotype} alt="Cyberia logotype" />
-          <p>Веб-разработка и усиление IT-команд</p>
+          <p>
+            Веб-разработка и<br />
+            усиление IT-команд
+          </p>
         </div>
         <div className={styles.footer_links}>
           <a href="tel:+79991234567">+7 999 123 45 67</a>
