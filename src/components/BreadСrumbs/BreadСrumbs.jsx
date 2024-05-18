@@ -14,22 +14,24 @@ const pathArr = [
 
 export default function BreadCrumbs() {
   return (
-    <nav>
-      {pathArr.map((item, index, arr) => {
-        if (index === arr.length - 1) {
-          return (
-            <a href={item.path} className={style.lastItem}>
-              {item.name}
-            </a>
-          );
-        }
+    <div className="container">
+      <nav>
+        {pathArr.map((item, index, arr) => {
+          if (index === arr.length - 1) {
+            return (
+              <a href={item.path} className={style.lastItem}>
+                {item.name}
+              </a>
+            );
+          }
 
-        return (
-          <>
-            <a href={item.path}>{item.name}</a>&nbsp;/&nbsp;
-          </>
-        );
-      })}
-    </nav>
+          return (
+            <>
+              <a href={item.path}>{item.name}</a>&nbsp;/&nbsp;
+            </>
+          );
+        })}
+      </nav>
+    </div>
   );
 }

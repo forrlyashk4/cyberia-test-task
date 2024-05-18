@@ -27,17 +27,19 @@ const headerLinksArr = [
 
 export default function Header() {
   return (
-    <header>
-      <a href="./">
-        <img src={logo} alt="Cyberia Logo" className={style.img} />
-      </a>
-      <div className={style.header__list}>
-        {headerLinksArr.map((linkData) => (
-          <a href={linkData.path} key={linkData.name}>
-            {linkData.name}
-          </a>
-        ))}
-      </div>
-    </header>
+    <div className="container">
+      <header>
+        <a href="./">
+          <img src={logo} alt="Cyberia Logo" className={style.img} />
+        </a>
+        <div className={style.header__list}>
+          {headerLinksArr.map((linkData) => (
+            <a href={linkData.path} key={linkData.name}>
+              {linkData.name}
+            </a>
+          ))}
+        </div>
+      </header>
+    </div>
   );
 }
