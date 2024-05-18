@@ -1,7 +1,62 @@
-import React from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import styles from "./Feedback.module.scss";
 
+function FeedbackInput({ text, name, type, state, handler }) {
+  return (
+    <div>
+      <label htmlFor={name}>
+        <span>{text}*</span>
+        <input
+          value={state}
+          onChange={handler}
+          required
+          type={type}
+          id={name}
+        />
+      </label>
+    </div>
+  );
+}
+
+FeedbackInput.propTypes = {
+  text: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  state: PropTypes.string.isRequired,
+  handler: PropTypes.func.isRequired,
+};
+
 export default function Feedback() {
+  const [name, setName] = useState(localStorage.getItem("name") || "");
+  const [email, setEmail] = useState(localStorage.getItem("email") || "");
+  const [phone, setPhone] = useState(localStorage.getItem("phone") || "");
+  const [message, setMessage] = useState(localStorage.getItem("message") || "");
+
+  const handleInputChange = (e) => {
+    const newData = e.target.value;
+    switch (e.target.id) {
+      case "name":
+        localStorage.setItem("name", newData);
+        setName(newData);
+        break;
+      case "email":
+        localStorage.setItem("email", newData);
+        setEmail(newData);
+        break;
+      case "phone":
+        localStorage.setItem("phone", newData);
+        setPhone(newData);
+        break;
+      case "message":
+        localStorage.setItem("message", newData);
+        setMessage(newData);
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="container">
       <form action="#">
@@ -10,27 +65,36 @@ export default function Feedback() {
             Расскажите
             <br />о вашем проекте:
           </legend>
-          <div>
-            <label htmlFor="name">
-              <span>Ваше имя*</span>
-              <input required type="text" id="name" />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="email">
-              <span>Email*</span>
-              <input required type="email" id="email" />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="phone">
-              <span>Телефон*</span>
-              <input required type="tel" id="phone" />
-            </label>
-          </div>
+          <FeedbackInput
+            text="Ваше имя"
+            name="name"
+            type="text"
+            state={name}
+            handler={handleInputChange}
+          />
+          <FeedbackInput
+            text="Email"
+            name="email"
+            type="email"
+            state={email}
+            handler={handleInputChange}
+          />
+          <FeedbackInput
+            text="Телефон"
+            name="phone"
+            type="tel"
+            state={phone}
+            handler={handleInputChange}
+          />
           <label htmlFor="message" className={styles.large_input}>
             <span>Сообщение*</span>
-            <textarea required name="message" id="message" />
+            <textarea
+              value={message}
+              onChange={handleInputChange}
+              required
+              name="message"
+              id="message"
+            />
           </label>
           <label htmlFor="isAgree" className={styles.checkbox_label}>
             <input

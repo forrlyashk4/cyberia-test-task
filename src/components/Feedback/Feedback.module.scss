@@ -28,15 +28,16 @@ form {
         box-sizing: border-box;
         width: 100%;
         background: none;
-        border: 1px solid #eff3ff;
+        border-width: 20px;
+        border-style: solid;
+        border-image: url("../../assets/icons/input-border.png") 30;
         border-radius: 8px;
         height: 61px;
         font-size: 24px;
-        padding: 0 12px;
+        padding: 12px 0 13px;
         color: #eff3ff;
         &:focus-visible {
           outline: none;
-          border: 1px solid #cdcfd5;
         }
       }
 
@@ -45,9 +46,8 @@ form {
         span {
           position: absolute;
           top: calc(-125% - 9px);
-          left: 30px;
+          left: 28px;
           padding: 0 5px;
-          background: #282933;
           font-size: 18px;
           color: #eff3ff;
         }
@@ -79,7 +79,9 @@ form {
   margin: 37px 0;
   box-sizing: border-box;
   background: none;
-  border: 1px solid #eff3ff;
+  border: 1px solid transparent;
+
+  border-image: url("../../assets/icons/textarea-border.png") 1;
   border-radius: 8px;
   height: 139px;
   font-size: 24px;
