@@ -1,10 +1,38 @@
 footer {
+  box-sizing: border-box;
   padding: 130px 0;
+  max-height: 396px;
+  color: #fff;
   background: #313341;
 }
 
+.footer_container {
+  display: flex;
+}
+
 .footer_links {
+  margin-left: 157px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  max-height: 114px;
+  flex: 1;
+  font-size: 18px;
+
+  & a {
+    margin-bottom: 23px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.15s;
+    &:hover {
+      color: #cfcfcf;
+    }
+    &:nth-child(6) {
+      margin-bottom: 0;
+    }
+  }
+
+  span {
+    margin-bottom: 0;
+  }
 }
