@@ -72,9 +72,13 @@ export default function Feedback() {
     };
 
     setName("");
+    localStorage.setItem("name", "");
     setEmail("");
+    localStorage.setItem("email", "");
     setPhone("");
+    localStorage.setItem("phone", "");
     setMessage("");
+    localStorage.setItem("message", "");
     setErrors({});
     e.target.reset();
 

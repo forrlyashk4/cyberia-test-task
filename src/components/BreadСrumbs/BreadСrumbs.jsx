@@ -26,10 +26,10 @@ export default function BreadCrumbs() {
           }
 
           return (
-            <>
+            <span key={item.name}>
               <a href={item.path}>{item.name}</a>
               &nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;
-            </>
+            </span>
           );
         })}
       </nav>

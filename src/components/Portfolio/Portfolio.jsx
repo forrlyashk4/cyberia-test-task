@@ -56,6 +56,7 @@ function PortfolioCards() {
           style={{
             backgroundImage: `url(${cardData.image})`,
           }}
+          key={cardData.title}
         >
           <div>
             <span>{cardData.title}</span>
