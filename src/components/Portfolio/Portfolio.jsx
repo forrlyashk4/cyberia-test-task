@@ -2,12 +2,17 @@ import React, { useState, useEffect } from "react";
 import styles from "./Portfolio.module.scss";
 
 function Categories() {
-  const [categoriesList, setCategoriesList] = useState([]);
+  const [categoriesList, setCategoriesList] = useState(
+    JSON.parse(sessionStorage.getItem("categories")) || [],
+  );
 
   useEffect(() => {
     fetch("https://api.test.cyberia.studio/api/v1/project-categories")
       .then((res) => res.json())
-      .then((data) => setCategoriesList(data.items))
+      .then((data) => {
+        sessionStorage.setItem("categories", JSON.stringify(data.items));
+        setCategoriesList(data.items);
+      })
       .catch((/* err */) => {
         // console.error("error", err);
         setCategoriesList([]);
@@ -26,12 +31,17 @@ function Categories() {
 }
 
 function PortfolioCards() {
-  const [cardsList, setCardsList] = useState([]);
+  const [cardsList, setCardsList] = useState(
+    JSON.parse(sessionStorage.getItem("cards")) || [],
+  );
 
   useEffect(() => {
     fetch("https://api.test.cyberia.studio/api/v1/projects")
       .then((res) => res.json())
-      .then((data) => setCardsList(data.items))
+      .then((data) => {
+        sessionStorage.setItem("cards", JSON.stringify(data.items));
+        setCardsList(data.items);
+      })
       .catch((/* err */) => {
         // console.error("error", err);
         setCardsList([]);
