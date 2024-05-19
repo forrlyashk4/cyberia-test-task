@@ -30,7 +30,7 @@ form {
         background: none;
         border-width: 20px;
         border-style: solid;
-        border-image: url("../../assets/icons/input-border.png") 30;
+        border-image: url("../../assets/icons/email-input-border.png") 30;
         border-radius: 8px;
         height: 61px;
         font-size: 24px;
@@ -46,7 +46,7 @@ form {
         span {
           position: absolute;
           top: calc(-125% - 9px);
-          left: 28px;
+          left: 24px;
           padding: 0 5px;
           font-size: 18px;
           color: #eff3ff;
@@ -93,7 +93,6 @@ form {
     top: -9px;
     left: 30px;
     padding: 0 5px;
-    background: #282933;
     font-size: 18px;
     color: #eff3ff;
   }
@@ -147,4 +146,12 @@ form {
 
 .checkbox_input:focus + .checkbox {
   border: 1px solid #cdcfd5;
+}
+
+.input-name {
+  border-image: url("../../assets/icons/name-input-border.png") 30;
+}
+
+.input-phone {
+  border-image: url("../../assets/icons/phone-input-border.png") 30;
 }

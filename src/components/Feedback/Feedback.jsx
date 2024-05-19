@@ -13,6 +13,7 @@ function FeedbackInput({ text, name, type, state, handler }) {
           required
           type={type}
           id={name}
+          className={styles[`input-${name}`]}
         />
       </label>
     </div>
