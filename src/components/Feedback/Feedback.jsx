@@ -33,6 +33,9 @@ export default function Feedback() {
   const [email, setEmail] = useState(localStorage.getItem("email") || "");
   const [phone, setPhone] = useState(localStorage.getItem("phone") || "");
   const [message, setMessage] = useState(localStorage.getItem("message") || "");
+  const [errors, setErrors] = useState({});
+
+  console.log(errors);
 
   const handleInputChange = (e) => {
     const newData = e.target.value;
@@ -58,9 +61,51 @@ export default function Feedback() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const feedbackData = {
+      name,
+      email,
+      phone,
+      message,
+    };
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
+    setErrors({});
+    e.target.reset();
+
+    try {
+      const response = await fetch(
+        "https://api.test.cyberia.studio/api/v1/feedbacks",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(feedbackData),
+        },
+      );
+
+      if (response.status === 422) {
+        const errorData = await response.json();
+        setErrors(errorData.errors);
+      } else if (!response.ok) {
+        throw new Error("Что-то пошло не так!");
+      } else {
+        alert("Фидбэк успешно отправлен!");
+      }
+    } catch (error) {
+      console.error("Ошибка при отправке фидбэка:", error);
+    }
+  };
+
   return (
     <div className="container">
-      <form action="#">
+      <form onSubmit={handleSubmit}>
         <fieldset>
           <legend>
             Расскажите
