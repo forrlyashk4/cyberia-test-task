@@ -54,7 +54,7 @@ function PortfolioCards() {
         <div
           className={styles.case}
           style={{
-            background: `url(${cardData.image})`,
+            backgroundImage: `url(${cardData.image})`,
           }}
         >
           <div>
