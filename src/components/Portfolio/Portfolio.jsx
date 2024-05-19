@@ -16,9 +16,40 @@ function Categories() {
 
   return (
     <div className={styles.portfolio__categoriesList}>
-      {categoriesList.map((category) => (
-        <div key={category.id} className={styles.portfolio__category}>
-          {category.name}
+      {categoriesList.map((categoryData) => (
+        <div key={categoryData.id} className={styles.portfolio__category}>
+          {categoryData.name}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function PortfolioCards() {
+  const [cardsList, setCardsList] = useState([]);
+
+  useEffect(() => {
+    fetch("https://api.test.cyberia.studio/api/v1/projects")
+      .then((res) => res.json())
+      .then((data) => setCardsList(data.items))
+      .catch((/* err */) => {
+        // console.error("error", err);
+        setCardsList([]);
+      });
+  }, []);
+
+  return (
+    <div className={styles.caseList}>
+      {cardsList.map((cardData) => (
+        <div
+          className={styles.case}
+          style={{
+            background: `url(${cardData.image})`,
+          }}
+        >
+          <div>
+            <span>{cardData.title}</span>
+          </div>
         </div>
       ))}
     </div>
@@ -31,38 +62,7 @@ export default function Portfolio() {
       <main>
         <h1 className={styles.portfolio__title}>Кейсы</h1>
         <Categories />
-        <div className={styles.caseList}>
-          <div className={styles.case}>
-            <div>
-              <span>Foodzo</span>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div>
-              <span>Foodzo</span>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div>
-              <span>Foodzo</span>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div>
-              <span>Foodzo</span>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div>
-              <span>Foodzo</span>
-            </div>
-          </div>
-          <div className={styles.case}>
-            <div>
-              <span>Foodzo</span>
-            </div>
-          </div>
-        </div>
+        <PortfolioCards />
       </main>
     </div>
   );
