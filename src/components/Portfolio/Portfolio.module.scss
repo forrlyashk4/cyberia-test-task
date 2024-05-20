@@ -38,10 +38,6 @@
 }
 
 .caseList {
-  // display: flex;
-  // justify-content: flex-start;
-  // flex-wrap: wrap;
-
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(378px, 0fr));
   gap: 31px 53px;
@@ -73,5 +69,32 @@
       font-weight: 600;
       color: #fff;
     }
+  }
+}
+
+@media (max-width: 1319px) {
+  main {
+    padding: 0 30px;
+  }
+
+  .portfolio__categoriesList {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 872px) {
+  .caseList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .portfolio__categoriesList {
+    justify-content: space-evenly;
+    margin-bottom: 25px;
+  }
+
+  .portfolio__category {
+    margin-bottom: 25px;
   }
 }

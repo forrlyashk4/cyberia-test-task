@@ -24,3 +24,19 @@ header {
     }
   }
 }
+
+@media (max-width: 1319px) {
+  header {
+    padding: 68px 30px;
+  }
+
+  .header__list a {
+    line-height: 225%;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    background: #20212c;
+  }
+}

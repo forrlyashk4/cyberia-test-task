@@ -46,3 +46,13 @@ footer {
     margin-bottom: 0;
   }
 }
+
+@media (max-width: 1319px) {
+  footer {
+    padding: 130px 30px;
+  }
+
+  .footer_links {
+    margin-left: 50px;
+  }
+}

@@ -155,3 +155,41 @@ form {
 .input-phone {
   border-image: url("../../assets/icons/phone-input-border.png") 30;
 }
+
+@media (max-width: 1319px) {
+  form {
+    padding: 0 30px;
+
+    & fieldset div {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 37px;
+      input {
+        border-image: none !important;
+        border: 1px solid #eef3ff;
+        padding: 0 10px;
+      }
+      span {
+        top: -5px !important;
+        left: 10px !important;
+      }
+    }
+
+    & fieldset .large_input {
+      width: 100%;
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 37px;
+      border-image: none !important;
+      textarea {
+        border-radius: 8px;
+        border: 1px solid #eef3ff;
+        padding: 10px 10px;
+      }
+      span {
+        top: 11px !important;
+        left: 10px !important;
+      }
+    }
+  }
+}
