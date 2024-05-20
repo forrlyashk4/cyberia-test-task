@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 import styles from "./Portfolio.module.scss";
 
-function Categories() {
+function Categories({ activeTab, setActiveTab }) {
   const [categoriesList, setCategoriesList] = useState(
     JSON.parse(sessionStorage.getItem("categories")) || [],
   );
@@ -19,18 +20,41 @@ function Categories() {
       });
   }, []);
 
+  const handleClick = (e) => {
+    if (Number(e.target.id) === activeTab) {
+      setActiveTab(0);
+    } else {
+      setActiveTab(Number(e.target.id));
+    }
+  };
+
   return (
     <div className={styles.portfolio__categoriesList}>
       {categoriesList.map((categoryData) => (
-        <div key={categoryData.id} className={styles.portfolio__category}>
+        <button
+          type="button"
+          key={categoryData.id}
+          onClick={handleClick}
+          className={
+            activeTab === Number(categoryData.id)
+              ? `${styles.portfolio__category} ${styles.portfolio__category_active}`
+              : styles.portfolio__category
+          }
+          id={categoryData.id}
+        >
           {categoryData.name}
-        </div>
+        </button>
       ))}
     </div>
   );
 }
 
-function PortfolioCards() {
+Categories.propTypes = {
+  activeTab: PropTypes.number.isRequired,
+  setActiveTab: PropTypes.func.isRequired,
+};
+
+function PortfolioCards({ activeTab }) {
   const [cardsList, setCardsList] = useState(
     JSON.parse(sessionStorage.getItem("cards")) || [],
   );
@@ -48,9 +72,18 @@ function PortfolioCards() {
       });
   }, []);
 
+  function filtration(cardsData) {
+    if (activeTab !== 0) {
+      return cardsData.filter(
+        (cardData) => cardData.categories[0].id === activeTab,
+      );
+    }
+    return cardsData;
+  }
+
   return (
     <div className={styles.caseList}>
-      {cardsList.map((cardData) => (
+      {filtration(cardsList).map((cardData) => (
         <div
           className={styles.case}
           style={{
@@ -67,13 +100,19 @@ function PortfolioCards() {
   );
 }
 
+PortfolioCards.propTypes = {
+  activeTab: PropTypes.number.isRequired,
+};
+
 export default function Portfolio() {
+  const [activeTab, setActiveTab] = useState(0);
+
   return (
     <div className="container">
       <main>
         <h1 className={styles.portfolio__title}>Кейсы</h1>
-        <Categories />
-        <PortfolioCards />
+        <Categories activeTab={activeTab} setActiveTab={setActiveTab} />
+        <PortfolioCards activeTab={activeTab} />
       </main>
     </div>
   );

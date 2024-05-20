@@ -22,20 +22,30 @@
   cursor: pointer;
   transition: 0.3s;
   margin-bottom: 52px;
+  background: none;
+  border: none;
   &:hover {
     transform: translateY(-5px);
     background: #292936;
+  }
+  &_active {
+    background: #2d76f9;
+    transform: translateY(-5px);
+    &:hover {
+      background: #2d76f9;
+    }
   }
 }
 
 .caseList {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
 .case {
   margin-bottom: 21px;
+  margin-left: 38px;
   width: 378px;
   height: 378px;
   box-sizing: border-box;
@@ -45,6 +55,12 @@
   align-items: flex-start;
   padding: 19px 13px;
   border-radius: 12px;
+  &:nth-child(1) {
+    margin-left: 0;
+  }
+  &:nth-child(4n) {
+    margin-left: 0;
+  }
   div {
     background: url("../../assets/icons/case-label.svg") center center/cover
       no-repeat;
