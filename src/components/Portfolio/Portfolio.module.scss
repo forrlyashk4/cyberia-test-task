@@ -38,15 +38,17 @@
 }
 
 .caseList {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  // display: flex;
+  // justify-content: flex-start;
+  // flex-wrap: wrap;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(378px, 0fr));
+  gap: 31px 53px;
 }
 
 .case {
-  margin-bottom: 21px;
-  margin-left: 38px;
-  width: 378px;
+  width: 387px;
   height: 378px;
   box-sizing: border-box;
   background: center center/cover no-repeat;
@@ -55,12 +57,6 @@
   align-items: flex-start;
   padding: 19px 13px;
   border-radius: 12px;
-  &:nth-child(1) {
-    margin-left: 0;
-  }
-  &:nth-child(4n) {
-    margin-left: 0;
-  }
   div {
     background: url("../../assets/icons/case-label.svg") center center/cover
       no-repeat;
