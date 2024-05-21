@@ -1,6 +1,6 @@
 footer {
   box-sizing: border-box;
-  padding: 130px 0;
+  padding: 134px 0;
   max-height: 396px;
   color: #fff;
   background: #313341;
@@ -15,11 +15,11 @@ footer {
   }
 }
 
-.footer_container {
+.footer__container {
   display: flex;
 }
 
-.footer_links {
+.footer__links {
   max-width: 488px;
   margin-left: 157px;
   display: flex;
@@ -49,10 +49,33 @@ footer {
 
 @media (max-width: 1319px) {
   footer {
-    padding: 130px 30px;
+    padding: 30px 25px;
   }
 
-  .footer_links {
-    margin-left: 50px;
+  .footer__links {
+    margin-left: 0px;
+    margin-top: 38px;
+    font-size: 13px;
+  }
+
+  .footer__container {
+    display: block;
+  }
+
+  .footer__logotype {
+    text-align: center;
+    img {
+      width: 102px;
+    }
+    p {
+      margin-top: 11px;
+      font-size: 13px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  footer {
+    font-family: "Open Sans";
   }
 }

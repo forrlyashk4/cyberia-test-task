@@ -19,7 +19,11 @@ export default function BreadCrumbs() {
         {pathArr.map((item, index, arr) => {
           if (index === arr.length - 1) {
             return (
-              <a key={item.name} href={item.path} className={style.lastItem}>
+              <a
+                key={item.name}
+                href={item.path}
+                className={style.nav__item_last}
+              >
                 {item.name}
               </a>
             );

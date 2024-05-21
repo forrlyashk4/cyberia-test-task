@@ -1,9 +1,14 @@
 form {
+  padding-bottom: 96px;
   fieldset {
     padding: 0;
     margin: 0;
     border: 0;
-    margin-top: 90px;
+    margin-top: 100px;
+
+    img {
+      display: none;
+    }
 
     legend {
       color: #eef3ff;
@@ -16,11 +21,15 @@ form {
       display: inline-block;
       width: 385px;
       margin-left: 42px;
-      &:nth-child(2) {
-        margin-left: 0;
+      position: relative;
+
+      div {
+        position: absolute;
+        top: 68px;
+        left: 0;
       }
 
-      &:nth-child(5) {
+      &:nth-child(3) {
         margin-left: 0;
       }
 
@@ -50,9 +59,14 @@ form {
           padding: 0 5px;
           font-size: 18px;
           color: #eff3ff;
+          font-weight: 300;
         }
       }
     }
+  }
+
+  p {
+    display: none;
   }
 
   button {
@@ -65,12 +79,22 @@ form {
     margin: 0 auto;
     border-radius: 85px;
     border: none;
-    margin-bottom: 96px;
     transition: 0.15s;
     cursor: pointer;
     &:hover {
       background: #2062db;
     }
+  }
+
+  .error_message {
+    color: #fff;
+    margin-left: 0;
+  }
+
+  .error_sentmessage {
+    color: #fff;
+    text-align: center;
+    margin-top: 25px;
   }
 }
 
@@ -95,6 +119,7 @@ form {
     padding: 0 5px;
     font-size: 18px;
     color: #eff3ff;
+    font-weight: 300;
   }
   textarea {
     box-sizing: border-box;
@@ -135,6 +160,7 @@ form {
     margin-bottom: 67px;
     font-size: 18px;
     font-weight: light;
+    font-weight: 300;
   }
 }
 
@@ -154,6 +180,15 @@ form {
 
 .input-phone {
   border-image: url("../../assets/icons/phone-input-border.png") 30;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: 1px solid #eff3ff;
+  -webkit-text-fill-color: #eff3ff;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 @media (max-width: 1319px) {
@@ -190,6 +225,84 @@ form {
         top: 11px !important;
         left: 10px !important;
       }
+    }
+
+    label span {
+      transition: 0.15s;
+    }
+
+    .input_has_content + span {
+      background: green;
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  form {
+    padding: 24px 25px 31px;
+    background: #20212c;
+    margin-top: 48px;
+
+    fieldset {
+      legend {
+        float: inline-start;
+        font-size: 24px;
+        margin-left: 28px;
+        margin-bottom: 0;
+        font-family: "Rubik";
+        font-weight: 500;
+      }
+
+      img {
+        display: block;
+        float: inline-start;
+        margin-bottom: 33px;
+      }
+
+      div {
+        margin-bottom: 22px;
+        font-family: "Open Sans";
+      }
+
+      .checkbox_label {
+        display: none;
+      }
+
+      button {
+        padding: 20px 45px;
+      }
+
+      div {
+        input {
+          font-size: 18px;
+        }
+        span {
+          top: 0px !important;
+          left: 10px !important;
+        }
+      }
+      .large_input {
+        textarea {
+          font-family: "Open Sans";
+          font-style: normal;
+          font-size: 18px;
+          padding-top: 13px;
+        }
+        font-family: "Open Sans";
+        font-style: normal;
+      }
+    }
+    button {
+      margin-bottom: 26px;
+      font-family: "Open Sans";
+    }
+    p {
+      display: block;
+      text-align: center;
+      color: #eef3ff;
+      margin-bottom: 31px;
+      font-family: "Open Sans";
     }
   }
 }

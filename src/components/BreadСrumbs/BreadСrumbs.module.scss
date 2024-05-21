@@ -1,6 +1,7 @@
 nav {
   color: #9aa8ba;
   cursor: default;
+  font-size: 18px;
 
   a {
     text-decoration: none;
@@ -13,7 +14,7 @@ nav {
     }
   }
 
-  .lastItem {
+  .nav__item_last {
     color: #c4d2e3;
     cursor: default;
     &:hover {
@@ -25,5 +26,14 @@ nav {
 @media (max-width: 1319px) {
   nav {
     padding: 0 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  nav {
+    padding: 41px 25px 29px;
+    font-size: 13px;
+    font-family: "Rubik";
+    font-weight: 300;
   }
 }

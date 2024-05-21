@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styles from "./Portfolio.module.scss";
+import caseIcon from "../../assets/icons/mobile-case-icon.png";
 
 function Categories({ activeTab, setActiveTab }) {
   const [categoriesList, setCategoriesList] = useState(
@@ -74,8 +75,8 @@ function PortfolioCards({ activeTab }) {
 
   function filtration(cardsData) {
     if (activeTab !== 0) {
-      return cardsData.filter(
-        (cardData) => cardData.categories[0].id === activeTab,
+      return cardsData.filter((cardData) =>
+        cardData.categories.some((category) => category.id === activeTab),
       );
     }
     return cardsData;
@@ -91,8 +92,11 @@ function PortfolioCards({ activeTab }) {
           }}
           key={cardData.title}
         >
-          <div>
+          <div className={styles.mobile_wrapper} />
+          <div className={styles.header_text}>
+            <img src={caseIcon} alt="Icon" />
             <span>{cardData.title}</span>
+            <p>{cardData.description}</p>
           </div>
         </div>
       ))}
