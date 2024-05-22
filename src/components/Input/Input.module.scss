@@ -1,0 +1,108 @@
+form {
+  fieldset {
+    .error_message {
+      color: #fff;
+      margin-left: 0;
+    }
+    .error_sentmessage {
+      color: #fff;
+      text-align: center;
+      margin-top: 25px;
+    }
+    div {
+      display: inline-block;
+      width: 385px;
+      margin-left: 42px;
+      position: relative;
+
+      div {
+        position: absolute;
+        top: 68px;
+        left: 0;
+      }
+
+      &:nth-child(3) {
+        margin-left: 0;
+      }
+
+      input {
+        box-sizing: border-box;
+        width: 100%;
+        background: none;
+        border-width: 20px;
+        border-style: solid;
+        border-image: url("../../assets/icons/email-input-border.png") 30;
+        border-radius: 8px;
+        height: 61px;
+        font-size: 24px;
+        padding: 12px 0 13px;
+        color: #eff3ff;
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      label {
+        position: relative;
+        span {
+          position: absolute;
+          top: calc(-125% - 9px);
+          left: 24px;
+          padding: 0 5px;
+          font-size: 18px;
+          color: #eff3ff;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1319px) {
+  form {
+    & fieldset div {
+      width: 100%;
+      margin-left: 0;
+      margin-bottom: 37px;
+      input {
+        border-image: none !important;
+        border: 1px solid #eef3ff;
+        padding: 0 10px;
+      }
+      span {
+        top: -5px !important;
+        left: 10px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  form {
+    padding: 24px 25px 31px;
+    background: #20212c;
+    margin-top: 48px;
+
+    fieldset {
+      div {
+        margin-bottom: 22px;
+        font-family: "Open Sans";
+        input {
+          font-size: 18px;
+        }
+        span {
+          top: 0px !important;
+          left: 10px !important;
+        }
+      }
+    }
+  }
+}
+
+.input-name {
+  border-image: url("../../assets/icons/name-input-border.png") 30;
+}
+
+.input-phone {
+  border-image: url("../../assets/icons/phone-input-border.png") 30;
+}

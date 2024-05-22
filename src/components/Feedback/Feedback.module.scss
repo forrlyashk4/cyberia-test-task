@@ -16,53 +16,6 @@ form {
       font-weight: 600;
       margin-bottom: 85px;
     }
-
-    div {
-      display: inline-block;
-      width: 385px;
-      margin-left: 42px;
-      position: relative;
-
-      div {
-        position: absolute;
-        top: 68px;
-        left: 0;
-      }
-
-      &:nth-child(3) {
-        margin-left: 0;
-      }
-
-      input {
-        box-sizing: border-box;
-        width: 100%;
-        background: none;
-        border-width: 20px;
-        border-style: solid;
-        border-image: url("../../assets/icons/email-input-border.png") 30;
-        border-radius: 8px;
-        height: 61px;
-        font-size: 24px;
-        padding: 12px 0 13px;
-        color: #eff3ff;
-        &:focus-visible {
-          outline: none;
-        }
-      }
-
-      label {
-        position: relative;
-        span {
-          position: absolute;
-          top: calc(-125% - 9px);
-          left: 24px;
-          padding: 0 5px;
-          font-size: 18px;
-          color: #eff3ff;
-          font-weight: 300;
-        }
-      }
-    }
   }
 
   p {
@@ -104,7 +57,6 @@ form {
   box-sizing: border-box;
   background: none;
   border: 1px solid transparent;
-
   border-image: url("../../assets/icons/textarea-border.png") 1;
   border-radius: 8px;
   height: 139px;
@@ -174,14 +126,6 @@ form {
   border: 1px solid #cdcfd5;
 }
 
-.input-name {
-  border-image: url("../../assets/icons/name-input-border.png") 30;
-}
-
-.input-phone {
-  border-image: url("../../assets/icons/phone-input-border.png") 30;
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
@@ -194,21 +138,6 @@ input:-webkit-autofill:focus {
 @media (max-width: 1319px) {
   form {
     padding: 0 30px;
-
-    & fieldset div {
-      width: 100%;
-      margin-left: 0;
-      margin-bottom: 37px;
-      input {
-        border-image: none !important;
-        border: 1px solid #eef3ff;
-        padding: 0 10px;
-      }
-      span {
-        top: -5px !important;
-        left: 10px !important;
-      }
-    }
 
     & fieldset .large_input {
       width: 100%;
